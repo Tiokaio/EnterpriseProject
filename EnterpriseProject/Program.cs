@@ -17,11 +17,13 @@ builder.Services.AddDbContext<AccountsPayableDbContext>(options => options.UseSq
 
 //Começo das depêndencias de Repositorios
 builder.Services.AddScoped<IEmployeeRepository, EmployeeRepository>();
+builder.Services.AddScoped<IAccountsPayableRepository, AccountsPayableRepository>();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddTransient<IEmployeeService, EmployeeService>();
+builder.Services.AddTransient<IAccountsPayableService, AccountsService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
